@@ -1,0 +1,17 @@
+syntax = "proto3";
+package nexus.nexus.v1;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "nexus/nexus/v1/params.proto";
+
+option go_package = "nexus/x/nexus/types";
+
+// GenesisState defines the nexus module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}

@@ -1,0 +1,18 @@
+version: 1
+validation: sovereign
+default_denom: nexcoin
+accounts:
+  - name: alice
+    coins:
+      - 200000000nexcoin
+  - name: bob
+    coins:
+      - 100000000nexcoin
+validators:
+  - name: alice
+    bonded: 100000000nexcoin
+    app:
+      json-rpc:
+        address: "0.0.0.0:8545"
+        enable: true
+        api: "eth,web3,net,txpool,debug,personal"

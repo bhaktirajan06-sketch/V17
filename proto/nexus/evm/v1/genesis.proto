@@ -1,0 +1,17 @@
+syntax = "proto3";
+package nexus.evm.v1;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "nexus/evm/v1/params.proto";
+
+option go_package = "nexus/x/evm/types";
+
+// GenesisState defines the evm module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
